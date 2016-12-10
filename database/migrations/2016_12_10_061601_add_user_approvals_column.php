@@ -14,7 +14,7 @@ class AddUserApprovalsColumn extends Migration
     public function up()
     {
         Schema::table('users', function($table) {
-            $table->boolean('approved');
+            $table->boolean('approved')->default(0);
         });
     }
 

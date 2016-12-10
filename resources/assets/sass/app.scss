@@ -1,9 +1,40 @@
+//===========================================
+//
+// Main Stylesheet Buildfile
+//
+//===========================================
 
-// Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+/*!
+ *   ___ _ __   __ _  __ _  __ _  ___
+ *  / _ \ '_ \ / _` |/ _` |/ _` |/ _ |
+ * |  __/ | | | (_| | (_| | (_| |  __/
+ *  \___|_| |_|\__, |\__,_|\__, |\___|
+ *              __/ |       __/ |
+ *             |___/       |___/
+ *
+ * Developed by Engage LLC (http://enga.ge)
+ */
 
-// Variables
+// Site variables
 @import "variables";
 
-// Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+// Custom mixins
+@import "mixins";
+
+// Overrides variables in ./bootstrap/variables
+@import "bootstrap-variables";
+
+// Loads font libraries
+@import "fonts";
+
+// Bootstrap core
+@import "bootstrap";
+
+// Base typography, content typography, wysiwyg and wp styles
+@import "typography";
+
+// Theme styles
+@import "theme";
+
+// Print styles
+@import "print";

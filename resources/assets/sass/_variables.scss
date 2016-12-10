@@ -1,37 +1,62 @@
+//===========================================
+//
+// Theme Variables
+//
+//===========================================
 
-// Body
-$body-bg: #f5f8fa;
+// Environment Variables
+//===========================================
+$img-folder: "../images";
+$fontsFolder: "../fonts";
 
-// Borders
-$laravel-border-color: darken($body-bg, 10%);
-$list-group-border: $laravel-border-color;
-$navbar-default-border: $laravel-border-color;
-$panel-default-border: $laravel-border-color;
-$panel-inner-border: $laravel-border-color;
+// Responsive Breakpoints
+//===========================================
+$xs: "only screen and (max-width: 767px)";
+$not-xs: "only screen and (min-width: 768px)";
+$xs-sm: "only screen and (max-width: 991px)";
+$xs-md: "only screen and (max-width: 1199px)";
 
-// Brands
-$brand-primary: #3097D1;
-$brand-info: #8eb4cb;
-$brand-success: #2ab27b;
-$brand-warning: #cbb956;
-$brand-danger: #bf5329;
+$sm: "only screen and (min-width: 768px) and (max-width: 991px)";
+$sm-md: "only screen and (min-width: 768px) and (max-width: 1199px)";
 
-// Typography
-$font-family-sans-serif: "Raleway", sans-serif;
-$font-size-base: 14px;
-$line-height-base: 1.6;
-$text-color: #636b6f;
+$md: "only screen and (min-width: 992px) and (max-width: 1199px)";
+$md-lg: "only screen and (min-width: 992px)";
 
-// Navbar
-$navbar-default-bg: #fff;
+$lg: "only screen and (min-width: 1200px)";
 
-// Buttons
-$btn-default-color: $text-color;
+$xl: "only screen and (min-width: 1400px)";
 
-// Inputs
-$input-border: lighten($text-color, 40%);
-$input-border-focus: lighten($brand-primary, 25%);
-$input-color-placeholder: lighten($text-color, 30%);
+$not-lg: "only screen and (max-width: 1199px)";
 
-// Panels
-$panel-default-heading-bg: #fff;
+
+// Site Colors
+// ===========
+$primaryColor: #221249;  // dark purple
+$secondaryColor: #ddccff;  // light purple
+
+$backgroundColor: #e8deff;
+
+$yes: #14473e;
+$no: #441414;
+
+// Typography Variables
+//===========================================
+$baseTextColor: $secondaryColor;
+$baseFontFamily: 'Josefin Sans', sans-serif;
+$baseFontSize: 20px;
+
+$headingsFont: 'Josefin Sans', serif;
+$headingsWeight: 300;
+$headingsLineHeight: 1.1;
+$headingsColor: $primaryColor;
+
+$handwriting: 'Indie Flower', cursive;
+
+$linkColor: #e98dff;
+$linkHoverColor: #ffcf4c;
+
+// Site Variables
+//===========================================
+$hoverTransitionSpeed: 400ms;
+
+$gutter: 30px;

@@ -1,0 +1,31 @@
+//===========================================
+//
+// Site Typography
+//
+//===========================================
+
+/*
+ * Base Typography
+ * ---------------------------
+ *
+ * Loads base typography styles
+ */
+
+@import "base-typography";
+
+/*
+ * Content Typography
+ * ---------------------------
+ *
+ * Styles for user generated content through a wysiwyg
+ * Includes WP defined classes and TinyMCE classes
+ * Should be within <main> with .main-content class
+ */
+
+.main-content {
+  @import "content-styles";
+}
+
+a.active {
+	color: $linkHoverColor;
+}
