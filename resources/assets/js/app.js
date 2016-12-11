@@ -15,6 +15,7 @@
 
  Vue.component('new-project', require('./components/newProject.vue'));
  Vue.component('project', require('./components/Project.vue'));
+ Vue.component('one-line-form', require('./components/OneLineForm.vue'));
 
  if (document.getElementById('login-app')) {
 
@@ -28,6 +29,7 @@
  	});
 
  }
+
 
  if (document.getElementById('app')) {
  	var Caboose = new Vue({
@@ -46,7 +48,13 @@
  				},
  				modal: {
  					on: false,
- 					message: ''
+ 					message: '',
+ 					form: {
+ 						headline: '',
+ 						on: false,
+ 						url: '',
+ 						type: ''
+ 					}
  				}
  			}
  		},
@@ -70,8 +78,14 @@
  				this.$http.get('/api/project/'+id).then((response) => {
  					this.currentProject = response.body;
  					this.switchPanel('project');
- 					console.log(this);
  				});
+ 			},
+ 			modalFormUp(form) {
+ 				this.modal.form.headline = form.headline;
+ 				this.modal.form.url = form.url;
+ 				this.modal.form.type = form.type;
+ 				this.modal.form.on = true;
+ 				this.modal.on = true;
  			}
  		}
  	});

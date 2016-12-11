@@ -139,6 +139,20 @@ a.btn:hover {
             border-color: lighten($no, 20%);
         }
     }
+
+    &.ghost {
+        border-style: dashed;
+        color: rgba($primaryColor, 0.6);
+        background-color: transparent;
+        opacity: 0.5;
+
+        &:hover,
+        &:focus {
+            background-color: transparent;
+            opacity: 1;
+            color: $primaryColor;
+        }
+    }
 }
 
 .button-link {
@@ -160,6 +174,27 @@ a.btn:hover {
         height: 28px;
         right: 15px;
         top: 7px;
+    }
+}
+
+button.modal-button {
+    width: auto;
+    padding: 5px 9px;
+    margin-top: $gutter;
+
+    .button-icon {
+        width: 30px;
+    }
+
+    &.no {
+        position: absolute;
+        right: 10px;
+        top: -20px;
+        padding: 3px 10px;
+
+        .button-icon {
+            width: 20px;
+        }
     }
 }
 
@@ -411,6 +446,10 @@ h2 {
     width: 600px;
     text-align: center;
     margin: 0 auto;
+    background-color: $backgroundColor;
+    border-radius: 10px;
+    padding: ($gutter * 2) $gutter $gutter;
+    position: relative;
 
     h2 {
         color: $baseTextColor;

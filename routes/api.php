@@ -22,3 +22,6 @@ Route::post('/project', 'ProjectController@newProject');
 
 // Get a project
 Route::get('/project/{id}', ['uses' => 'ProjectController@showProject']);
+
+// Edit Project
+Route::post('/project/{id}', ['uses' => 'ProjectController@editProject']);

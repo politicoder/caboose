@@ -33,10 +33,25 @@ class ProjectController extends Controller
     public function showProject($id) {
     	$project = Project::where('project_id','=',$id)->first();
     	$output = [
+    		'id' => $project->project_id,
     		'name' => $project->name,
-    		'user' => $project->user->name
+    		'user' => $project->user->name,
+    		'basecamp_url' => $project->basecamp_url,
+    		'invision_url' => $project->invision_url,
+    		'invision_password' => $project->invision_password,
+    		'staging_url' => $project->staging_url
     	];
     	return $output;
+    }
+
+    public function editProject($id, Request $request) {
+    	$project = Project::where('project_id','=',$id)->first();
+
+    	$project[$request->key] = $request->value;
+    	$project->save();
+
+    	return $project;
+    	
     }
 
 }

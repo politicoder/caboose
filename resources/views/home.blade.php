@@ -4,10 +4,11 @@
 <main id="app">
 
     <div class="modal" v-if="modal.on">
-        <div class="modal-content">
+        <div class="modal-content" v-if="!modal.form.on">
             <img src="img/icons/plus.png" class="spinner">
             <span class="modal-message">@{{ modal.message }}</span>
         </div>
+        <one-line-form v-else :form="modal.form"></one-line-form>
     </div>
 
     <transition name="slide-fade">
@@ -25,18 +26,9 @@
                         <div class="corner-circle" id="circle3"></div>
                         <div class="corner-circle" id="circle4"></div>
                         <div class="projects-list-inner">
-                            <a href="#" class="button-link">
-                                Ed Gillespie
-                                <img src="{{ asset('img/icons/arrow-right.png') }}" class="button-icon">
-                            </a>
-                            <a href="#" class="button-link">
-                                Garden State Initiative
-                                <img src="{{ asset('img/icons/arrow-right.png') }}" class="button-icon">
-                            </a>
-                            <a href="#" class="button-link">
-                                SPN Phase III
-                                <img src="{{ asset('img/icons/arrow-right.png') }}" class="button-icon">
-                            </a>
+                            @foreach(App\Project::get() as $project)
+                            <a href="#" class="button-link" v-on:click.prevent="switchToProject({{ $project->project_id }})">{{ $project->name }}<img src="{{ asset('img/icons/arrow-right.png') }}" class="button-icon"></a>
+                            @endforeach
                         </div>
                     </div>
 
@@ -59,7 +51,7 @@
 
     {{-- Project View --}}
     <transition name="slide-fade">
-        <project v-if="currentPanel == 'project'" v-on:backtolist="switchPanel('allProjects')" v-bind:project="currentProject"></project>
+        <project v-if="currentPanel == 'project'" v-on:backtolist="switchPanel('allProjects')" v-on:getform="modalFormUp($event)" v-bind:project="currentProject"></project>
     </transition>
 
 
