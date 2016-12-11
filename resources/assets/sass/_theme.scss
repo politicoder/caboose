@@ -200,6 +200,7 @@ button.modal-button {
 
 .text-box {
     @extend %button;
+
     background-color: transparent;
     color: $primaryColor;
 }
@@ -460,5 +461,16 @@ h2 {
     h2 {
         color: $baseTextColor;
         margin: 20px 0 0;
+    }
+}
+
+// Single Pages
+// ============
+
+.single-page {
+    text-align: center;
+    color: $primaryColor;
+    p {
+        font-weight: 700;
     }
 }

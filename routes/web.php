@@ -11,8 +11,12 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->middleware('checkapproval');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'HomeController@index')->middleware('checkapproval');
+
+Route::get('/unapproved', function() {
+	return view('errors.unapproved');
+})->name('unapproved');

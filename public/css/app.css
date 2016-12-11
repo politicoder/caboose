@@ -3821,6 +3821,15 @@ h2 {
   margin: 20px 0 0;
 }
 
+.single-page {
+  text-align: center;
+  color: #221249;
+}
+
+.single-page p {
+  font-weight: 700;
+}
+
 @media print {
   @page {
     margin: .5in;
