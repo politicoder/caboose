@@ -198,6 +198,12 @@ button.modal-button {
     }
 }
 
+.text-box {
+    @extend %button;
+    background-color: transparent;
+    color: $primaryColor;
+}
+
 button {
     -webkit-appearance: none;
 

@@ -4,11 +4,15 @@
 <main id="app">
 
     <div class="modal" v-if="modal.on">
+    
         <div class="modal-content" v-if="!modal.form.on">
             <img src="img/icons/plus.png" class="spinner">
             <span class="modal-message">@{{ modal.message }}</span>
         </div>
-        <one-line-form v-else :form="modal.form"></one-line-form>
+
+        <one-line-form v-if="modal.form.format == 'oneLine'" :form="modal.form" v-on:killmodal="killModal()" v-on:updateproject="updateProject($event)"></one-line-form>
+
+        <link-form v-if="modal.form.format == 'link'" :form="modal.form" v-on:killmodal="killModal()" v-on:updateproject="updateProject($event)"></link-form>
     </div>
 
     <transition name="slide-fade">

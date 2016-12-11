@@ -3456,7 +3456,7 @@ a.btn:hover {
   text-decoration: none;
 }
 
-.button-link, button {
+.button-link, .text-box, button {
   width: 100%;
   border-radius: 7px;
   border-width: 2px;
@@ -3475,42 +3475,42 @@ a.btn:hover {
   text-align: left;
 }
 
-.button-link:last-of-type, button:last-of-type {
+.button-link:last-of-type, .text-box:last-of-type, button:last-of-type {
   margin-bottom: 0;
 }
 
-.button-link:focus, button:focus {
+.button-link:focus, .text-box:focus, button:focus {
   outline-color: #221249;
 }
 
-.yes.button-link, button.yes, .toggle.button-link, button.toggle {
+.yes.button-link, .yes.text-box, button.yes, .toggle.button-link, .toggle.text-box, button.toggle {
   background-color: #14473e;
   border-color: #14473e;
 }
 
-.yes.button-link:hover, button.yes:hover, .yes.button-link:focus, button.yes:focus, .toggle.button-link:hover, button.toggle:hover, .toggle.button-link:focus, button.toggle:focus {
+.yes.button-link:hover, .yes.text-box:hover, button.yes:hover, .yes.button-link:focus, .yes.text-box:focus, button.yes:focus, .toggle.button-link:hover, .toggle.text-box:hover, button.toggle:hover, .toggle.button-link:focus, .toggle.text-box:focus, button.toggle:focus {
   background-color: #1f6f61;
   border-color: #1f6f61;
 }
 
-.no.button-link, button.no {
+.no.button-link, .no.text-box, button.no {
   background-color: #441414;
   border-color: #441414;
 }
 
-.no.button-link:hover, button.no:hover, .no.button-link:focus, button.no:focus {
+.no.button-link:hover, .no.text-box:hover, button.no:hover, .no.button-link:focus, .no.text-box:focus, button.no:focus {
   background-color: #932b2b;
   border-color: #932b2b;
 }
 
-.ghost.button-link, button.ghost {
+.ghost.button-link, .ghost.text-box, button.ghost {
   border-style: dashed;
   color: rgba(34, 18, 73, 0.6);
   background-color: transparent;
   opacity: 0.5;
 }
 
-.ghost.button-link:hover, button.ghost:hover, .ghost.button-link:focus, button.ghost:focus {
+.ghost.button-link:hover, .ghost.text-box:hover, button.ghost:hover, .ghost.button-link:focus, .ghost.text-box:focus, button.ghost:focus {
   background-color: transparent;
   opacity: 1;
   color: #221249;
@@ -3554,6 +3554,11 @@ button.modal-button.no {
 
 button.modal-button.no .button-icon {
   width: 20px;
+}
+
+.text-box {
+  background-color: transparent;
+  color: #221249;
 }
 
 button {

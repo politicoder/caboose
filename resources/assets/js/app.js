@@ -16,6 +16,7 @@
  Vue.component('new-project', require('./components/newProject.vue'));
  Vue.component('project', require('./components/Project.vue'));
  Vue.component('one-line-form', require('./components/OneLineForm.vue'));
+ Vue.component('link-form', require('./components/AddLink.vue'));
 
  if (document.getElementById('login-app')) {
 
@@ -53,7 +54,8 @@
  						headline: '',
  						on: false,
  						url: '',
- 						type: ''
+ 						type: '',
+ 						format: ''
  					}
  				}
  			}
@@ -86,6 +88,19 @@
  				this.modal.form.type = form.type;
  				this.modal.form.on = true;
  				this.modal.on = true;
+ 				if (form.type != 'link') {
+ 					this.modal.form.format = 'oneLine';
+ 				}
+ 				if (form.type == 'link') {
+ 					this.modal.form.format = 'link';
+ 				}
+ 			},
+ 			killModal() {
+ 				this.modal.on = false;
+ 			},
+ 			updateProject(project) {
+ 				this.currentProject = project;
+ 				this.killModal();
  			}
  		}
  	});

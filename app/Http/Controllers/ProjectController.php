@@ -4,15 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Project;
+use App\Link;
 
 class ProjectController extends Controller
 {
-    public function newProject(Request $request) {
+	public function newProject(Request $request) {
 
-    	$output = [];
+		$output = [];
 
-    	if (sizeof(Project::where('name','=',$request->name)->get()) > 0) {
-    		$output['success'] = 0;
+		if (sizeof(Project::where('name','=',$request->name)->get()) > 0) {
+			$output['success'] = 0;
     		$output['error'] = 1; // Name already taken
     		return $output;
     	}
@@ -32,25 +33,27 @@ class ProjectController extends Controller
 
     public function showProject($id) {
     	$project = Project::where('project_id','=',$id)->first();
-    	$output = [
-    		'id' => $project->project_id,
-    		'name' => $project->name,
-    		'user' => $project->user->name,
-    		'basecamp_url' => $project->basecamp_url,
-    		'invision_url' => $project->invision_url,
-    		'invision_password' => $project->invision_password,
-    		'staging_url' => $project->staging_url
-    	];
-    	return $output;
+    	return $project->json();
     }
 
     public function editProject($id, Request $request) {
+
     	$project = Project::where('project_id','=',$id)->first();
 
+    	if ($request->key == 'link') {
+    		$link = new Link;
+    		$link->link_text = $request->value['link_text'];
+    		$link->link_url = $request->value['link_url'];
+    		$link->project_id = $project->project_id;
+    		$link->save();
+    		return $project->json();
+    	}
+
     	$project[$request->key] = $request->value;
+
     	$project->save();
 
-    	return $project;
+    	return $project->json();
     	
     }
 

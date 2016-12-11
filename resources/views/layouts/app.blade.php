@@ -27,7 +27,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-2">
-                        <img src="{{ asset('img/logo.png') }}" alt="Caboose" class="logo">
+                        <a href="/">
+                            <img src="{{ asset('img/logo.png') }}" alt="Caboose" class="logo">
+                        </a>
                     </div>
                 </div>
             </div>
