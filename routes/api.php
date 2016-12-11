@@ -16,3 +16,9 @@ use Illuminate\Http\Request;
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
+
+// New Project
+Route::post('/project', 'ProjectController@newProject');
+
+// Get a project
+Route::get('/project/{id}', ['uses' => 'ProjectController@showProject']);

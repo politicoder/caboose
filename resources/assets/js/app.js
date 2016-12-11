@@ -13,7 +13,8 @@
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
- Vue.component('example', require('./components/Example.vue'));
+ Vue.component('new-project', require('./components/newProject.vue'));
+ Vue.component('project', require('./components/Project.vue'));
 
  if (document.getElementById('login-app')) {
 
@@ -34,6 +35,7 @@
  		data: function() {
  			return {
  				currentPanel: 'allProjects',
+ 				currentProject: {},
  				panels: {
  					projectsList: {
  						open: true
@@ -41,6 +43,10 @@
  					newProject: {
  						open: false
  					}
+ 				},
+ 				modal: {
+ 					on: false,
+ 					message: ''
  				}
  			}
  		},
@@ -51,7 +57,22 @@
  				setTimeout(function(){
  					_caboose.currentPanel = to;
  				}, 700);
+ 			},
+ 			modalPop(modal) {
+ 				this.modal.message = modal.message;
+ 				this.modal.on = true;
+ 				var _caboose = this;
+ 				setTimeout(function(){
+ 					_caboose.modal.on = false;
+ 				}, modal.duration*1000);
+ 			},
+ 			switchToProject(id) {
+ 				this.$http.get('/api/project/'+id).then((response) => {
+ 					this.currentProject = response.body;
+ 					this.switchPanel('project');
+ 					console.log(this);
+ 				});
  			}
  		}
- 	})
+ 	});
  }
