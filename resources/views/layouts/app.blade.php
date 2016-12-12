@@ -11,6 +11,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
+    <link rel="shortcut icon" href="{{ asset('img/favicon.png') }}">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Josefin+Sans:300,300i,700" rel="stylesheet">
     <link href="/css/app.css" rel="stylesheet">
 
