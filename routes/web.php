@@ -17,6 +17,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->middleware('checkapproval');
 
-Route::get('/unapproved', function() {
-	return view('errors.unapproved');
-})->name('unapproved');
+Route::get('/unapproved', 'HomeController@unapproved')->name('unapproved');
