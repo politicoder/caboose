@@ -24,19 +24,23 @@
  		el: '#login-app',
  		data: function() {
  			return {
- 				formChosen: ''
+ 				formChosen: '',
+ 				ready: false
  			}
+ 		},
+ 		mounted: function() {
+ 			this.ready = true;
  		}
  	});
 
  }
-
 
  if (document.getElementById('app')) {
  	var Caboose = new Vue({
  		el: '#app',
  		data: function() {
  			return {
+ 				ready: false,
  				currentPanel: 'allProjects',
  				currentProject: {},
  				panels: {
@@ -102,6 +106,9 @@
  				this.currentProject = project;
  				this.killModal();
  			}
+ 		},
+ 		mounted: function() {
+ 			this.ready = true;
  		}
  	});
  }

@@ -3556,6 +3556,10 @@ button.modal-button.no .button-icon {
   width: 20px;
 }
 
+#login-app button {
+  text-align: center;
+}
+
 .text-box {
   background-color: transparent;
   color: #221249;
@@ -3735,6 +3739,26 @@ h2 {
   font-style: italic;
 }
 
+#app {
+  opacity: 0;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+#app.ready {
+  opacity: 1;
+}
+
+#login-app {
+  opacity: 0;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+#login-app.ready {
+  opacity: 1;
+}
+
 .slide-fade-enter-active {
   -webkit-transition: 0.6s;
   transition: 0.6s;
@@ -3767,7 +3791,7 @@ h2 {
 }
 
 .modal .modal-message {
-  color: #ddccff;
+  color: #221249;
   font-size: 56px;
   display: inline-block;
 }

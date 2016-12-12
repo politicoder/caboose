@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<main id="app">
+<main id="app" v-bind:class="{ ready: ready }">
 
     <div class="modal" v-if="modal.on">
     

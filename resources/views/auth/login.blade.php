@@ -1,20 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" id="login-app">
+<div class="container" id="login-app" v-bind:class="{ ready: ready }">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <div class="panel-header">
                 <h1>Hi!</h1>
-            </div>
-
-            {{-- Choose Login or Register --}}
-            <div class="row toggle-container">
-                <div class="col-sm-6">
-                    <button class="toggle" :class="{ 'toggle-chosen': formChosen == 'login', 'toggle-unchosen': formChosen == 'register' }" v-on:click.prevent="formChosen = 'login'">We've met before</button>
-                </div>
-                <div class="col-sm-6">
-                    <button class="toggle" :class="{ 'toggle-chosen': formChosen == 'register', 'toggle-unchosen': formChosen == 'login' }" v-on:click.prevent="formChosen = 'register'">I'm new here</button>
+                {{-- Choose Login or Register --}}
+                <div class="row toggle-container">
+                    <div class="col-sm-6">
+                        <button class="toggle" :class="{ 'toggle-chosen': formChosen == 'login', 'toggle-unchosen': formChosen == 'register' }" v-on:click.prevent="formChosen = 'login'">We've met before</button>
+                    </div>
+                    <div class="col-sm-6">
+                        <button class="toggle" :class="{ 'toggle-chosen': formChosen == 'register', 'toggle-unchosen': formChosen == 'login' }" v-on:click.prevent="formChosen = 'register'">I'm new here</button>
+                    </div>
                 </div>
             </div>
 

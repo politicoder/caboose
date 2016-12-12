@@ -33,23 +33,6 @@ class ProjectController extends Controller
     }
 
     public function showProject($id) {
-
-        if (!Auth::check()) {
-            return [
-                'who_sucks' => 'you',
-                'how_much' => 'a lot',
-                'reason' => 'not logged in'
-            ];
-        }
-
-        if (!Auth::user()->approved) {
-            return [
-                'who_sucks' => 'you',
-                'how_much' => 'a lot',
-                'reason' => 'account not approved'
-            ];
-        }
-
     	$project = Project::where('project_id','=',$id)->first();
     	return $project->json();
     }
