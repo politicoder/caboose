@@ -6,6 +6,7 @@
         <div class="col-md-6 col-md-offset-3">
             <div class="panel-header">
                 <h1>Hi!</h1>
+                <p>Caboose is the end of the line for development projects &mdash; notes, mockups, and links all in one place.</p>
                 {{-- Choose Login or Register --}}
                 <div class="row toggle-container">
                     <div class="col-sm-6">

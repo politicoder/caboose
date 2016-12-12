@@ -3731,6 +3731,11 @@ header .header-stripe span a {
   margin: 0;
 }
 
+.panel-header p {
+  text-align: center;
+  color: #221249;
+}
+
 h1 {
   font-size: 58px;
 }
