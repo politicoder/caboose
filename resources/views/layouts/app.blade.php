@@ -20,6 +20,8 @@
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
             ]); ?>
+
+        window.caboose_url = '{{ url('/') }}';
         </script>
     </head>
     <body>

@@ -67,10 +67,14 @@
  		methods: {
  			switchPanel: function(to) {
  				this.currentPanel = '';
+
  				var _caboose = this;
  				setTimeout(function(){
  					_caboose.currentPanel = to;
  				}, 700);
+ 				if (to != 'project') {
+ 					window.location.hash = '';
+ 				}
  			},
  			modalPop(modal) {
  				this.modal.message = modal.message;
@@ -82,6 +86,7 @@
  			},
  			switchToProject(id) {
  				this.$http.get('/api/project/'+id).then((response) => {
+ 					window.location.hash = 'project'+id;
  					this.currentProject = response.body;
  					this.switchPanel('project');
  				});
@@ -108,6 +113,13 @@
  			}
  		},
  		mounted: function() {
+
+ 			/* Check hash for project */
+ 			if (window.location.hash.includes('project')) {
+ 				var projectId = window.location.hash.slice(8);
+ 				this.switchToProject(projectId);
+ 			}
+
  			this.ready = true;
  		}
  	});
