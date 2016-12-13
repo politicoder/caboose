@@ -42,15 +42,19 @@ class ProjectController extends Controller
     	$project = Project::where('project_id','=',$id)->first();
 
     	if ($request->key == 'link') {
+            $url = substr($request->value['link_url'], 0, 4) != 'http' ? 'http://'.$request->value['link_url'] : $request->value['link_url'];
     		$link = new Link;
     		$link->link_text = $request->value['link_text'];
-    		$link->link_url = $request->value['link_url'];
+    		$link->link_url = $url;
     		$link->project_id = $project->project_id;
     		$link->save();
     		return $project->json();
     	}
 
-    	$project[$request->key] = $request->value;
+        
+        // Catch-all for the other types of links
+        $url = substr($request->value, 0, 4) != 'http' ? 'http://'.$request->value : $request->value;
+    	$project[$request->key] = $url;
 
     	$project->save();
 
